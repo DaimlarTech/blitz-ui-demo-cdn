@@ -10,12 +10,63 @@
 </head>
 
 <body>
-    <!-- <div class="file-input">
-        <div class="label label_type_file" id="preview2"></div>
-        <input type="file" id="file2" class="input_type_file" data-role="resize-input" data-target="#preview2">
-        <label for="file2" class="button button_type_line">画像をアップロードする</label>
-    </div> -->
-    <div class="" data-role="pdf-preview" data-url="kyoto.pdf"></div>
+    <form action="">
+        <div class="pdf-popup pdf-popup__hidden" data-role="pdf-popup" id="test-pdf-popup">
+            <div class="pdf-popup__back">
+                <div class="pdf-popup__content">
+                    <button type="button" class="pdf-popup__close" data-role="pdf-popup-btn"
+                      data-target="#test-pdf-popup">
+                        <span class="material-symbols-outlined">
+                            close
+                        </span>
+                    </button>
+
+                    <div class="pdf-popup__body" id="contract-pdf">
+                        <div data-role="pdf-preview-dl" data-url="contract.pdf"
+                          class="pdf-preview pdf-preview_height_full">
+                            <div class="pdf-preview_loading">
+                                <span class="material-symbols-outlined">
+                                    progress_activity
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pdf-popup__footer">
+                        <div class="scroll-check">
+                            <label for="agreement" style="color: #FFF; display: block;">
+                                <input type="checkbox" id="agreement" data-role="scroll-check"
+                                  data-target="#contract-pdf" disabled required>
+                                <span>上記内容を確認しました。</span>
+                            </label>
+
+                            <button type="button" class="button" data-role="scroll-check-btn" data-target="#agreement"
+                              data-download="#download-link" data-result="download_at" data-modal="#test-pdf-popup"
+                              disabled>
+                                同意してダウンロード
+                            </button>
+
+                            <a href="" id="download-link" target="_blank"></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="gap: 8px; display: flex; align-items: center; padding: 16px;">
+            <button type="button" data-role="pdf-popup-btn" data-target="#test-pdf-popup" class="pdf-popup__button">
+                確認する
+            </button>
+            <span data-role="download-result-display" data-target="download_at">未承諾</span>
+            <input type="datetime" name="download_at" data-role="download-result" required>
+        </div>
+        <button class="button">
+            submit
+        </button>
+    </form>
+
+    <div data-url="contract.pdf" id="test" style="width: 100%;"></div>
 </body>
 
 </html>
