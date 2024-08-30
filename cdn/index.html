@@ -4,69 +4,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ui-demo-v2</title>
+    <title>ui-demo</title>
   <script type="module" crossorigin src="/main.js"></script>
   <link rel="stylesheet" crossorigin href="/style.css">
 </head>
 
 <body>
-    <form action="">
-        <div class="pdf-popup pdf-popup__hidden" data-role="pdf-popup" id="test-pdf-popup">
-            <div class="pdf-popup__back">
-                <div class="pdf-popup__content">
-                    <button type="button" class="pdf-popup__close" data-role="pdf-popup-btn"
-                      data-target="#test-pdf-popup">
-                        <span class="material-symbols-outlined">
-                            close
-                        </span>
-                    </button>
+    <style>
 
-                    <div class="pdf-popup__body" id="contract-pdf">
-                        <div data-role="pdf-preview-dl" data-url="contract.pdf"
-                          class="pdf-preview pdf-preview_height_full">
-                            <div class="pdf-preview_loading">
-                                <span class="material-symbols-outlined">
-                                    progress_activity
-                                </span>
-                            </div>
-                        </div>
+    </style>
+
+    <main class="main main_gray">
+        <div class="main__header">配当履歴一覧</div>
+        <div class="dividend-list">
+            <a class="dividend-card">
+                <div class="dividend-card__fund-info">
+                    <div class="dividend-card__img">
+                        <div class="img img_loading"></div>
                     </div>
-
-                    <div class="pdf-popup__footer">
-                        <div class="scroll-check">
-                            <label for="agreement" style="color: #FFF; display: block;">
-                                <input type="checkbox" id="agreement" data-role="scroll-check"
-                                  data-target="#contract-pdf" disabled required>
-                                <span>上記内容を確認しました。</span>
-                            </label>
-
-                            <button type="button" class="button" data-role="scroll-check-btn" data-target="#agreement"
-                              data-download="#download-link" data-result="download_at" data-modal="#test-pdf-popup"
-                              disabled>
-                                同意してダウンロード
-                            </button>
-
-                            <a href="" id="download-link" target="_blank"></a>
+                    <div class="dividend-card__fund">
+                        <div class="fund-label dividend-card__fund-label">
+                            <span class="fund-label__status fund-label__status_id_1"></span>
+                            <span class="fund-label__type fund-label__type_id_null"></span>
                         </div>
-
+                        <div class="dividend-card__title">
+                            ファンドタイトル
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+                <div class="dividend-card__detail">
+                    <dl class="dividend-card__detail-dl">
+                        <dt>配当日時</dt>
+                        <dd class="format_date">2024/03/28</dd>
+                        <dt>出資額</dt>
+                        <dd class="format_num format_price">9999</dd>
+                        <dt>計算日数</dt>
+                        <dd class="format_day">999</dd>
+                        <dt>利回り</dt>
+                        <dd class="format_num format_rate">9.9</dd>
+                        <dt>配当損益</dt>
+                        <dd class="foramt_num format_price">9999</dd>
+                        <dt>税額</dt>
+                        <dd>
+                            <span class="format_num format_rate format_gray">9.9</span>
+                            <span class="format_num format_price">9999</span>
+                        </dd>
+                        <dt>振込金額</dt>
+                        <dd class="format_num format_price">9999</dd>
+                        <dt>振込予定日</dt>
+                        <dd class="format_date">2024/12/12</dd>
+                    </dl>
+                </div>
+            </a>
 
-        <div style="gap: 8px; display: flex; align-items: center; padding: 16px;">
-            <button type="button" data-role="pdf-popup-btn" data-target="#test-pdf-popup" class="pdf-popup__button">
-                確認する
-            </button>
-            <span data-role="download-result-display" data-target="download_at">未承諾</span>
-            <input type="datetime" name="download_at" data-role="download-result" required>
-        </div>
-        <button class="button">
-            submit
-        </button>
-    </form>
+            <a class="dividend-card">
+                <div class="dividend-card__fund-info">
+                    <div class="dividend-card__img">
+                        <div class="img img_loading"></div>
+                    </div>
+                    <div class="dividend-card__fund">
+                        <div class="fund-label dividend-card__fund-label">
+                            <span class="fund-label__status fund-label__status_id_1"></span>
+                            <span class="fund-label__type fund-label__type_id_null"></span>
+                        </div>
+                        <div class="dividend-card__title">
+                            ファンドタイトル
+                        </div>
+                    </div>
+                </div>
+                <div class="dividend-card__detail">
+                    <dl class="dividend-card__detail-dl">
+                        <dt>配当日時</dt>
+                        <dd class="format_date">2024/03/28</dd>
+                        <dt>出資額</dt>
+                        <dd class="format_num format_price">9999</dd>
+                        <dt>計算日数</dt>
+                        <dd class="format_day">999</dd>
+                        <dt>利回り</dt>
+                        <dd class="format_num format_rate">9.9</dd>
+                        <dt>配当損益</dt>
+                        <dd class="foramt_num format_price">9999</dd>
+                        <dt>税額</dt>
+                        <dd>
+                            <span class="format_num format_rate format_gray">9.9</span>
+                            <span class="format_num format_price">9999</span>
+                        </dd>
+                        <dt>振込金額</dt>
+                        <dd class="format_num format_price">9999</dd>
+                        <dt>振込予定日</dt>
+                        <dd class="format_date">2024/12/12</dd>
+                    </dl>
+                </div>
+            </a>
 
-    <div data-url="contract.pdf" id="test" style="width: 100%;"></div>
+            <a class="dividend-card">
+                <div class="dividend-card__fund-info">
+                    <div class="dividend-card__img">
+                        <div class="img img_loading"></div>
+                    </div>
+                    <div class="dividend-card__fund">
+                        <div class="fund-label dividend-card__fund-label">
+                            <span class="fund-label__status fund-label__status_id_1"></span>
+                            <span class="fund-label__type fund-label__type_id_null"></span>
+                        </div>
+                        <div class="dividend-card__title">
+                            ファンドタイトル
+                        </div>
+                    </div>
+                </div>
+                <div class="dividend-card__detail">
+                    <dl class="dividend-card__detail-dl">
+                        <dt>配当日時</dt>
+                        <dd class="format_date">2024/03/28</dd>
+                        <dt>出資額</dt>
+                        <dd class="format_num format_price">9999</dd>
+                        <dt>計算日数</dt>
+                        <dd class="format_day">999</dd>
+                        <dt>利回り</dt>
+                        <dd class="format_num format_rate">9.9</dd>
+                        <dt>配当損益</dt>
+                        <dd class="foramt_num format_price">9999</dd>
+                        <dt>税額</dt>
+                        <dd>
+                            <span class="format_num format_rate format_gray">9.9</span>
+                            <span class="format_num format_price">9999</span>
+                        </dd>
+                        <dt>振込金額</dt>
+                        <dd class="format_num format_price">9999</dd>
+                        <dt>振込予定日</dt>
+                        <dd class="format_date">2024/12/12</dd>
+                    </dl>
+                </div>
+            </a>
+
+            <a class="dividend-card">
+                <div class="dividend-card__fund-info">
+                    <div class="dividend-card__img">
+                        <div class="img img_loading"></div>
+                    </div>
+                    <div class="dividend-card__fund">
+                        <div class="fund-label dividend-card__fund-label">
+                            <span class="fund-label__status fund-label__status_id_1"></span>
+                            <span class="fund-label__type fund-label__type_id_null"></span>
+                        </div>
+                        <div class="dividend-card__title">
+                            ファンドタイトル
+                        </div>
+                    </div>
+                </div>
+                <div class="dividend-card__detail">
+                    <dl class="dividend-card__detail-dl">
+                        <dt>配当日時</dt>
+                        <dd class="format_date">2024/03/28</dd>
+                        <dt>出資額</dt>
+                        <dd class="format_num format_price">9999</dd>
+                        <dt>計算日数</dt>
+                        <dd class="format_day">999</dd>
+                        <dt>利回り</dt>
+                        <dd class="format_num format_rate">9.9</dd>
+                        <dt>配当損益</dt>
+                        <dd class="foramt_num format_price">9999</dd>
+                        <dt>税額</dt>
+                        <dd>
+                            <span class="format_num format_rate format_gray">9.9</span>
+                            <span class="format_num format_price">9999</span>
+                        </dd>
+                        <dt>振込金額</dt>
+                        <dd class="format_num format_price">9999</dd>
+                        <dt>振込予定日</dt>
+                        <dd class="format_date">2024/12/12</dd>
+                    </dl>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <script>
+
+    </script>
 </body>
 
 </html>
